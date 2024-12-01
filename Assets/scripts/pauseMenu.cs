@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class pauseMenu : MonoBehaviour
 {
+
+    public GameObject pauseScreen = null;
+    
     void Update()
+    
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("code escape pressed");
-            screen = GameObject.FindGameObjectsWithTag("pauseTab");
-            if (screen.activeSelf)
+            // GameObject pauseScreen = GameObject.FindGameObjectsWithTag("pauseTab")[0];
+            if (pauseScreen.activeSelf)
                 {
-                    screen.SetActive(false);
+                    pauseScreen.SetActive(false);
                 }
             else{
-                    screen.SetActive(true);
+                    pauseScreen.SetActive(true);
                 }
         }
     }
